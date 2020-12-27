@@ -45,5 +45,4 @@ MANIFEST
 .ipynb_checkpoints/
 
 *.zip
-/images
 /data
