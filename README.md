@@ -19,4 +19,5 @@ Swiss Roll
 References
 
 * [[1704.00028] Improved Training of Wasserstein GANs](https://arxiv.org/abs/1704.00028)
+* [[1801.04406] Which Training Methods for GANs do actually Converge?](https://arxiv.org/abs/1801.04406)
 * [[1902.03984] Improving Generalization and Stability of Generative Adversarial Networks](https://arxiv.org/abs/1902.03984)
