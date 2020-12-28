@@ -2,7 +2,7 @@
 
 Various GAN experiments with Pytorch.
 
-### WGAN-GP On Toy Datasets
+### [WGAN-GP On Toy Datasets](notebooks/wgan_gp_toy.ipynb)
 
 Gaussian 8
 
