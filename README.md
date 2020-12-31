@@ -16,6 +16,11 @@ Swiss Roll
 
 ![](images/wgan_gp_swiss_roll.png)
 
+### [DCGAN with GP on MNIST](notebooks/wgan_gp_mnist.ipynb)
+
+![](images/wgan_gp_mnist_stats.png)
+![](images/wgan_gp_mnist_results.png)
+
 ## References
 
 * [[1704.00028] Improved Training of Wasserstein GANs](https://arxiv.org/abs/1704.00028)
