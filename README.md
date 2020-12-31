@@ -23,3 +23,4 @@ Swiss Roll
 * [[1902.03984] Improving Generalization and Stability of Generative Adversarial Networks](https://arxiv.org/abs/1902.03984)
 * [[1709.08894] On the regularization of Wasserstein GANs](https://arxiv.org/abs/1709.08894)
 * [[1609.04468] Sampling Generative Networks](https://arxiv.org/abs/1609.04468)
+  * [dribnet/plat](https://github.com/dribnet/plat)
