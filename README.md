@@ -2,6 +2,13 @@
 
 Various GAN experiments with Pytorch.
 
+## Contents
+
+* [WGAN-GP On Toy Datasets](#wgan-gp-on-toy-datasets)
+* [DCGAN with GP on MNIST](#dcgan-with-gp-on-mnist)
+
+## Notebooks
+
 ### [WGAN-GP On Toy Datasets](notebooks/wgan_gp_toy.ipynb)
 
 Gaussian 8
