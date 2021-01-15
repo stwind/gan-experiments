@@ -148,3 +148,13 @@ def ssim_multiscale(
     return _msssim(
         img1, img2, kernel, max_val=max_val, k1=k1, k2=k2, power_factors=power_factors
     )
+
+
+def cov(m, y=None):
+    """np.cov for pytorch"""
+    if y is not None:
+        m = torch.cat((m, y), dim=0)
+    m_exp = torch.mean(m, dim=1)
+    x = m - m_exp[:, None]
+    cov = 1 / (x.size(1) - 1) * x.mm(x.t())
+    return cov

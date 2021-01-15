@@ -36,3 +36,6 @@ Swiss Roll
 * [[1709.08894] On the regularization of Wasserstein GANs](https://arxiv.org/abs/1709.08894)
 * [[1609.04468] Sampling Generative Networks](https://arxiv.org/abs/1609.04468)
   * [dribnet/plat](https://github.com/dribnet/plat)
+* [[1511.08861] Loss Functions for Neural Networks for Image Processing](https://arxiv.org/abs/1511.08861)
+* [[1807.00734] The relativistic discriminator: a key element missing from standard GAN](https://arxiv.org/abs/1807.00734)
+* [[1801.03924] The Unreasonable Effectiveness of Deep Features as a Perceptual Metric](https://arxiv.org/abs/1801.03924)
