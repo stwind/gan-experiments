@@ -25,6 +25,9 @@ fastprogress = "*"
 torchsummary = "*"
 opencv-python = "*"
 pillow = "*"
+torchinfo = "*"
+h5py = "*"
+tensorflow = "*"
 
 [requires]
 python_version = "3.8"

@@ -1,3 +1,6 @@
+import io
+import requests
+import PIL
 import numpy as np
 
 
@@ -65,3 +68,8 @@ def make_mine_grid(anchors, nrow, space):
                 grid[y, x, :] = slerp(grid[prev, x, :], grid[cur, x, :], t)
 
     return grid.reshape(-1, dim)
+
+
+def fetch_image(url):
+    resp = requests.get(url)
+    return PIL.Image.open(io.BytesIO(resp.content))
