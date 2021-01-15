@@ -19,8 +19,9 @@ class SSIM(nn.Module):
         self.k2 = k2
 
     def forward(self, img1, img2):
+        kernel = self.kernel.to(img1.device)
         ssim_val, _ = _ssim_per_channel(
-            img1, img2, self.kernel, max_val=self.max_val, k1=self.k1, k2=self.k2
+            img1, img2, kernel, max_val=self.max_val, k1=self.k1, k2=self.k2
         )
         return ssim_val.mean(-1)
 
@@ -44,6 +45,7 @@ class MSSSIM(nn.Module):
         self.power_factors = power_factors
 
     def forward(self, img1, img2):
+        kernel = self.kernel.to(img1.device)
         return _msssim(
-            img1, img2, self.kernel, self.max_val, self.k1, self.k2, self.power_factors
+            img1, img2, kernel, self.max_val, self.k1, self.k2, self.power_factors
         )
