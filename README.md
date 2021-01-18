@@ -45,3 +45,5 @@ Swiss Roll
 * [[2002.04185] Smoothness and Stability in GANs](https://arxiv.org/abs/2002.04185)
 * [[1705.09367] Stabilizing Training of Generative Adversarial Networks through Regularization](https://arxiv.org/abs/1705.09367)
 * [[1802.05957] Spectral Normalization for Generative Adversarial Networks](https://arxiv.org/abs/1802.05957)
+* [[2002.03754] Unsupervised Discovery of Interpretable Directions in the GAN Latent Space](https://arxiv.org/abs/2002.03754)
+* [[2004.02546] GANSpace: Discovering Interpretable GAN Controls](https://arxiv.org/abs/2004.02546)

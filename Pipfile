@@ -28,6 +28,7 @@ pillow = "*"
 torchinfo = "*"
 h5py = "*"
 tensorflow = "*"
+msgpack = "*"
 
 [requires]
 python_version = "3.8"

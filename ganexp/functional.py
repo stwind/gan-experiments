@@ -158,3 +158,9 @@ def cov(m, y=None):
     x = m - m_exp[:, None]
     cov = 1 / (x.size(1) - 1) * x.mm(x.t())
     return cov
+
+
+def slerp(a, b, t):
+    omega = torch.arccos(torch.dot(a / a.norm(), b / b.norm()))
+    so = torch.sin(omega)
+    return (((1.0 - t) * omega).sin() * a + (t * omega).sin() * b) / so

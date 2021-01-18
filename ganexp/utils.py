@@ -73,3 +73,62 @@ def make_mine_grid(anchors, nrow, space):
 def fetch_image(url):
     resp = requests.get(url)
     return PIL.Image.open(io.BytesIO(resp.content))
+
+
+def conv2d(x, weight, bias=None, stride=1, padding=0, dilation=1):
+    N, C, H, W = x.shape
+    K, _, R, S = weight.shape
+    sh, sw = (stride, stride) if isinstance(stride, int) else stride
+    ph, pw = (padding, padding) if isinstance(padding, int) else padding
+    dh, dw = (dilation, dilation) if isinstance(dilation, int) else dilation
+
+    x = np.pad(x, ((0, 0), (0, 0), (ph, ph), (pw, pw)), mode="constant")
+
+    H += 2 * ph
+    W += 2 * pw
+    P = int((H - dh * (R - 1) - 1) / sh + 1)
+    Q = int((W - dw * (S - 1) - 1) / sw + 1)
+
+    # im2col
+    shape = (C, R, S, N, P, Q)
+    strides = np.array([H * W, W, 1, C * H * W, sh * W, sw]) * x.itemsize
+    x = np.lib.stride_tricks.as_strided(
+        x, shape=shape, strides=strides, writeable=False
+    )
+    x_cols = np.ascontiguousarray(x).reshape(C * R * S, N * P * Q)
+
+    res = weight.reshape(K, C * R * S).dot(x_cols)
+    if bias is not None:
+        res += bias.reshape(-1, 1)
+
+    out = res.reshape(K, N, P, Q).swapaxes(0, 1)
+    return np.ascontiguousarray(out)
+
+
+def dilate(x, stride=1):
+    sh, sw = (stride, stride) if isinstance(stride, int) else stride
+    if sh == sw == 1:
+        return x
+    N, C, H, W = x.shape
+    out = np.zeros((N, C, (H - 1) * sh + 1, (W - 1) * sw + 1), dtype=x.dtype)
+    out[..., ::sh, ::sw] = x
+    return out
+
+
+def conv_transpose2d(x, weight, bias=None, stride=1, padding=0, dilation=1):
+    sh, sw = (stride, stride) if isinstance(stride, int) else stride
+    ph, pw = (padding, padding) if isinstance(padding, int) else padding
+    _, _, R, S = weight.shape
+
+    return conv2d(
+        dilate(x, (sh, sw)),
+        np.flip(weight.swapaxes(0, 1), (-1, -2)),
+        bias,
+        padding=(R - 1 - ph, S - 1 - pw),
+        dilation=dilation,
+    )
+
+
+def batch_norm2d(x, weight, bias, mean, sigma, epsilon=1e-9):
+    norm = (x - mean) / np.sqrt(sigma + epsilon)
+    return norm * weight + bias
