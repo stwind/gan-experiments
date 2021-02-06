@@ -6,6 +6,7 @@ Various GAN experiments with Pytorch.
 
 * [WGAN-GP On Toy Datasets](#wgan-gp-on-toy-datasets)
 * [DCGAN with GP on MNIST](#dcgan-with-gp-on-mnist)
+* [WGAN with Spectral Normalization on Flower102](#wgan-with-spectral-normalization-on-flower102)
 
 ## Notebooks
 
@@ -27,6 +28,10 @@ Swiss Roll
 
 ![](images/wgan_gp_mnist_stats.png)
 ![](images/wgan_gp_mnist_results.png)
+
+### [WGAN with Spectral Normalization on Flower102](notebooks/wgan_specnorm_flower102.ipynb)
+
+![](images/wgan_specnorm_flower102.png)
 
 ## References
 
