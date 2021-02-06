@@ -28,10 +28,6 @@ Swiss Roll
 ![](images/wgan_gp_mnist_stats.png)
 ![](images/wgan_gp_mnist_results.png)
 
-### [WGAN with Spectral Normalization on Flower 102](notebooks/wgan_specnorm_flower102.ipynb)
-
-![](images/wgan_specnorm_flower102.png)
-
 ## References
 
 * [[1704.00028] Improved Training of Wasserstein GANs](https://arxiv.org/abs/1704.00028)
