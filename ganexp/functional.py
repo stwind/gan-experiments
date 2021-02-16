@@ -8,11 +8,12 @@ def padding_same(in_size, kernel_size, stride=1, dilation=1):
     return max(0, (out_size - 1) * stride + filter_size - in_size)
 
 
-def pad_same(x, kernel):
+def pad_same(x, kernel_size, stride=1):
     """same behavior as padding='SAME' of tensorflow"""
     _, _, h, w = x.size()
-    _, _, kh, kw = kernel.size()
-    ph, pw = padding_same(h, kh, 2), padding_same(w, kw, 2)
+    kh, kw = (kernel_size, kernel_size) if isinstance(kernel_size, int) else kernel_size
+    sh, sw = (stride, stride) if isinstance(stride, int) else stride
+    ph, pw = padding_same(h, kh, sh), padding_same(w, kw, sw)
     hph, hpw = ph // 2, pw // 2
     return F.pad(x, [hpw, hpw + (pw % 2), hph, hph + (ph % 2)])
 

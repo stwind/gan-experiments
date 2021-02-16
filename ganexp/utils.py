@@ -130,5 +130,6 @@ def conv_transpose2d(x, weight, bias=None, stride=1, padding=0, dilation=1):
 
 
 def batch_norm2d(x, weight, bias, mean, sigma, epsilon=1e-9):
-    norm = (x - mean) / np.sqrt(sigma + epsilon)
-    return norm * weight + bias
+    shape = (1, x.shape[1], 1, 1)
+    norm = (x - mean.reshape(shape)) / np.sqrt(sigma + epsilon).reshape(shape)
+    return norm * weight.reshape(shape) + bias.reshape(shape)
