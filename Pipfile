@@ -29,6 +29,7 @@ torchinfo = "*"
 h5py = "*"
 tensorflow = "*"
 msgpack = "*"
+ptflops = "*"
 
 [requires]
 python_version = "3.8"
