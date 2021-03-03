@@ -33,6 +33,10 @@ Swiss Roll
 
 ![](images/wgan_specnorm_flower102.png)
 
+### [Stylegan2 Ada On Ukiyoe-faces](notebooks/stylegan2_ada_ukiyoe_faces.ipynb)
+
+![](images/stylegan2_ukiyoue_faces_interp.png)
+
 ## References
 
 * [[1704.00028] Improved Training of Wasserstein GANs](https://arxiv.org/abs/1704.00028)
