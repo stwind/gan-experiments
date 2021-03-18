@@ -37,6 +37,10 @@ Swiss Roll
 
 ![](images/stylegan2_ukiyoue_faces_interp.png)
 
+### [GANSpace PCA with Stylegan2 Ada On Ukiyoe-faces](notebooks/stylegan2_ganspace.ipynb)
+
+![](images/stylegan2_ganspace_pca.png)
+
 ## References
 
 * [[1704.00028] Improved Training of Wasserstein GANs](https://arxiv.org/abs/1704.00028)
